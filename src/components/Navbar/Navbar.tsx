@@ -2,7 +2,11 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import { CiShoppingCart } from "react-icons/ci";
 
-const Navbar: React.FC = () => {
+type ContadorProps = {
+  contador: number;
+};
+
+const Navbar: React.FC<ContadorProps> = ({ contador }) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
@@ -26,7 +30,7 @@ const Navbar: React.FC = () => {
         <div className={styles.actions}>
           <button className={styles.cartButton}>
             <CiShoppingCart size={24} color="#fff" />
-            (0)
+            {contador}
           </button>
         </div>
       </div>
