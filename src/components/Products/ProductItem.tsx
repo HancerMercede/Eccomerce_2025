@@ -43,7 +43,7 @@ export const ProductItem: React.FC<ProductCardProps> = ({
         <div className={styles.addCardButtonContainer}>
           <button className={styles.addCartButton} onClick={AddProductToCard}>
             <CiShoppingCart className={styles.icon} size={20} />
-            Add to Car
+            Add to Cart
           </button>
         </div>
       </div>

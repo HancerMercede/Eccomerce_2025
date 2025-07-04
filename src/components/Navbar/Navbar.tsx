@@ -1,22 +1,26 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import { CiShoppingCart } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 type ContadorProps = {
   contador: number;
 };
 
 const Navbar: React.FC<ContadorProps> = ({ contador }) => {
+  const getNumber = (n: number) => {
+    if (!n) return "";
+    return n > 9 ? "9+" : n;
+  };
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h1>CompraYa</h1>
+          <Link to="/" className={styles.logoLink}>
+            <h1>CompraYa</h1>
+          </Link>
         </div>
         <ul className={styles.navLinks}>
-          <li>
-            <a href="#home">Home</a>
-          </li>
           <li>
             <a href="#products">Products</a>
           </li>
@@ -26,11 +30,20 @@ const Navbar: React.FC<ContadorProps> = ({ contador }) => {
           <li>
             <a href="#contact">Contact</a>
           </li>
+          <li>
+            <a href="#contact">Account</a>
+          </li>
         </ul>
         <div className={styles.actions}>
           <button className={styles.cartButton}>
             <CiShoppingCart size={24} color="#fff" />
-            {contador}
+            <span className={styles.bubble}>
+              {contador !== 0 ? (
+                <span className={styles.bubbleAlert}>
+                  {getNumber(contador)}
+                </span>
+              ) : null}
+            </span>
           </button>
         </div>
       </div>
