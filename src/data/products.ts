@@ -1,4 +1,12 @@
-export const products = [
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  image?: string;
+}
+
+export const products: Product[] = [
   {
     id: 1,
     name: "Apple",
@@ -52,42 +60,48 @@ export const products = [
     name: "Grapes",
     price: 2.1,
     description: "Fresh grapes",
-    image: "https://via.placeholder.com/150/800080/FFFFFF?text=Grapes",
+    image:
+      "https://images.unsplash.com/photo-1515778767554-42d4b373f2b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhcGVzfGVufDB8fDB8fHww",
   },
   {
     id: 8,
     name: "Strawberry",
     price: 2.5,
     description: "Sweet strawberry",
-    image: "https://via.placeholder.com/150/FF6347/FFFFFF?text=Strawberry",
+    image:
+      "https://images.unsplash.com/photo-1587393855524-087f83d95bc9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3RyYXdiZXJyeXxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 9,
     name: "Peach",
     price: 1.9,
     description: "Delicious peaches",
-    image: "https://via.placeholder.com/150/FFDAB9/FFFFFF?text=Peach",
+    image:
+      "https://images.unsplash.com/photo-1570978561297-793391262fea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlYWNofGVufDB8fDB8fHww",
   },
   {
     id: 10,
     name: "Kiwi",
     price: 2.2,
     description: "Kiwi fruits",
-    image: "https://via.placeholder.com/150/98FB98/000000?text=Kiwi",
+    image:
+      "https://media.istockphoto.com/id/184991186/photo/kiwi-isolated.webp?a=1&b=1&s=612x612&w=0&k=20&c=lk7_P5fvvWt_NHk_MRO9SG2h-0TxMxFN1loA1khuykw=",
   },
   {
     id: 11,
     name: "Broccoli",
     price: 1.8,
     description: "Fresh broccoli",
-    image: "https://via.placeholder.com/150/228B22/FFFFFF?text=Broccoli",
+    image:
+      "https://images.unsplash.com/photo-1723976525220-a5c4f8a879b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJvY29saXxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 12,
     name: "Potato",
     price: 0.8,
     description: "Russet potatoes",
-    image: "https://via.placeholder.com/150/DEB887/FFFFFF?text=Potato",
+    image:
+      "https://media.istockphoto.com/id/2184346724/photo/fresh-organic-raw-fingerling-potatoes-heap.webp?a=1&b=1&s=612x612&w=0&k=20&c=F5yzpnPdDJHz7rLMtZym46CMcTbvp2g-HvWzjpWMb_4=",
   },
   {
     id: 13,

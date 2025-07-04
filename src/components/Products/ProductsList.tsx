@@ -1,16 +1,9 @@
 import React from "react";
-import { products } from "../../data/products.js";
+import { products } from "../../data/products";
 import styles from "./ProductsList.module.css";
 
 interface ProductsListProps {}
 // types.ts
-export interface Product {
-  id: string;
-  name: string;
-  image: string;
-  price: number;
-  description: string;
-}
 
 const ProductsList: React.FC<ProductsListProps> = () => {
   const handleImageError = (
@@ -31,22 +24,24 @@ const ProductsList: React.FC<ProductsListProps> = () => {
         Products
       </h2>
       <div className={styles.productsGrid}>
-        {products.map((product: Product) => (
-          <div key={product.id} className={styles.productCard}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className={styles.productImage}
-              onError={handleImageError}
-              loading="lazy"
-            />
-            <div className={styles.productContent}>
-              <h3 className={styles.productName}>{product.name}</h3>
-              <p className={styles.price}>${product.price.toFixed(2)}</p>
-              <p className={styles.description}>{product.description}</p>
+        {products
+          .map((product) => (
+            <div key={product.id} className={styles.productCard}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className={styles.productImage}
+                onError={handleImageError}
+                loading="lazy"
+              />
+              <div className={styles.productContent}>
+                <h3 className={styles.productName}>{product.name}</h3>
+                <p className={styles.price}>${product.price.toFixed(2)}</p>
+                <p className={styles.description}>{product.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+          .slice(0, 12)}
       </div>
     </div>
   );
