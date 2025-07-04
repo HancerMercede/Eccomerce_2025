@@ -1,7 +1,6 @@
 import { CiShoppingCart } from "react-icons/ci";
 import type { Product } from "../../Interfaces/Product";
 import styles from "./ProductsList.module.css";
-import { MdRemoveShoppingCart } from "react-icons/md";
 
 interface ProductCardProps {
   product: Product;
