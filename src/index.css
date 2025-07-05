@@ -5,6 +5,15 @@
     padding: 0;
 }
 
+:root {
+    --primary: #4CAF50;
+    --secondary: #FFEB3B;
+    --accent: #FF9800;
+    --background: #FAFAFA;
+    --text-main: #212121;
+    --text-muted: #757575;
+}
+
 body {
     max-width: 100%;
     margin: 0 auto;

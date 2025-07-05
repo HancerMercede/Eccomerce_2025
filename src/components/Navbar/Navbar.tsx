@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.css";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
@@ -8,19 +8,43 @@ type ContadorProps = {
 };
 
 const Navbar: React.FC<ContadorProps> = ({ contador }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenuHandler = () => setToggleMenu((prev) => !prev);
+
   const getNumber = (n: number) => {
     if (!n) return "";
     return n > 9 ? "9+" : n;
   };
+
+  useEffect(() => {
+    const handleClickOutSide = (e: MouseEvent) => {
+      if (toggleMenu && !sidebarRef.current?.contains(e.target as Node)) {
+        setToggleMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutSide);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSide);
+    };
+  }, [toggleMenu]);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
+        <button className={styles.toggleButton} onClick={toggleMenuHandler}>
+          {toggleMenu ? "" : "≡"}
+        </button>
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink}>
             <h1>CompraYa</h1>
           </Link>
         </div>
-        <ul className={styles.navLinks}>
+        <ul
+          ref={sidebarRef}
+          className={`${styles.navLinks} ${toggleMenu ? styles.open : ""}`}
+        >
           <li>
             <a href="#products">Products</a>
           </li>
@@ -34,9 +58,10 @@ const Navbar: React.FC<ContadorProps> = ({ contador }) => {
             <a href="#contact">Account</a>
           </li>
         </ul>
+
         <div className={styles.actions}>
           <button className={styles.cartButton}>
-            <CiShoppingCart size={24} color="#fff" />
+            <CiShoppingCart size={24} className={styles.cartIcon} />
             <span className={styles.bubble}>
               {contador !== 0 ? (
                 <span className={styles.bubbleAlert}>
