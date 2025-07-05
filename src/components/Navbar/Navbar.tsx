@@ -9,7 +9,7 @@ type ContadorProps = {
 
 const Navbar: React.FC<ContadorProps> = ({ contador }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const sidebarRef = useRef<HTMLDivElement>(null);
+  const sidebarRef = useRef<HTMLUListElement>(null);
 
   const toggleMenuHandler = () => setToggleMenu((prev) => !prev);
 
