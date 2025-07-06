@@ -1,0 +1,45 @@
+.footer {
+    background: linear-gradient(#007bff, #0062cc);
+    color: #fff;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.brand h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff4e50, #f9d423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.links a,
+.social a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.links a:hover,
+.social a:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #ffffff33;
+    padding-top: 1rem;
+}

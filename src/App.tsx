@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import ProductsList from "./components/Products/ProductsList";
 import { useState } from "react";
 import { products } from "./data/products";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [contador, setContador] = useState<number>(0);
@@ -19,6 +20,7 @@ function App() {
         placeholder="Search products..."
       />
       <ProductsList products={products} handleClick={handleClick} />
+      <Footer />
     </>
   );
 }

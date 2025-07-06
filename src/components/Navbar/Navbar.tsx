@@ -46,16 +46,16 @@ const Navbar: React.FC<ContadorProps> = ({ contador }) => {
           className={`${styles.navLinks} ${toggleMenu ? styles.open : ""}`}
         >
           <li>
-            <a href="#products">Products</a>
+            <a href="#products">Productos</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about">Sobre Nosotros</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contacto</a>
           </li>
           <li>
-            <a href="#contact">Account</a>
+            <a href="#contact">Cuenta</a>
           </li>
         </ul>
 
