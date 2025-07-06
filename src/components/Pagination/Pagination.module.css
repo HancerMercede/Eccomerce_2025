@@ -1,0 +1,38 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 0.4rem 0.75rem;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+}
+
+.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.ellipsis {
+    cursor: default;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navBtn {
+    font-size: 1rem;
+}
