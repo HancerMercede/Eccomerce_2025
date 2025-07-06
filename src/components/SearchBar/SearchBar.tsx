@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
+import React, { useEffect, useState } from "react";
+import styles from "./SearchBar.module.css";
+import { useDebounce } from "../../hooks/useDebounce";
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
@@ -7,12 +8,14 @@ interface SearchBarProps {
   className?: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ 
-  onSearch, 
-  placeholder = "Search products...", 
-  className = "" 
+const SearchBar: React.FC<SearchBarProps> = ({
+  onSearch,
+  placeholder = "Search products...",
+  className = "",
 }) => {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -21,16 +24,21 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (onSearch) {
-      onSearch(searchQuery);
+      onSearch?.(searchQuery);
     }
   };
 
   const handleClear = () => {
-    setSearchQuery('');
+    setSearchQuery("");
     if (onSearch) {
-      onSearch('');
+      onSearch?.("");
     }
   };
+
+  useEffect(() => {
+    console.log("Debounced value:", debouncedSearchQuery);
+    onSearch?.(debouncedSearchQuery);
+  }, [debouncedSearchQuery, onSearch]);
 
   return (
     <div className={`${styles.searchContainer} ${className}`}>
@@ -55,12 +63,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
           )}
         </div>
         <button type="submit" className={styles.searchButton}>
-          <svg 
-            width="16" 
-            height="16" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
             strokeWidth="2"
           >
             <circle cx="11" cy="11" r="8" />

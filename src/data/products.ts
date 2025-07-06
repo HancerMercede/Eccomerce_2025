@@ -102,56 +102,64 @@ export const products: Product[] = [
     name: "Tomato",
     price: 1.3,
     description: "Fresh tomatoes",
-    image: "https://via.placeholder.com/150/FF6347/FFFFFF?text=Tomato",
+    image:
+      "https://media.istockphoto.com/id/1906490893/photo/growth-ripe-tomato-in-greenhouse.webp?a=1&b=1&s=612x612&w=0&k=20&c=eRiHrrOhDKKEVuoCIV3GEqU-DAzeiGHm8AT7phJE7ls=",
   },
   {
     id: 14,
     name: "Lettuce",
     price: 1.1,
     description: "Green lettuce",
-    image: "https://via.placeholder.com/150/90EE90/FFFFFF?text=Lettuce",
+    image:
+      "https://media.istockphoto.com/id/181072765/photo/lettuce-isolated-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=31FSvc0ZqFO4wxrT_bpBdryRxjxEdYaY-M8zM2VYdVA=",
   },
   {
     id: 15,
     name: "Cucumber",
     price: 0.9,
     description: "Fresh cucumber",
-    image: "https://via.placeholder.com/150/32CD32/FFFFFF?text=Cucumber",
+    image:
+      "https://images.unsplash.com/photo-1568584711271-6c929fb49b60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEN1Y3VtYmVyfGVufDB8fDB8fHww",
   },
   {
     id: 16,
     name: "Onion",
     price: 0.7,
     description: "Yellow onions",
-    image: "https://via.placeholder.com/150/FFD700/FFFFFF?text=Onion",
+    image:
+      "https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2Vib2xsYXxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 17,
     name: "Garlic",
     price: 1.4,
     description: "Fresh garlic",
-    image: "https://via.placeholder.com/150/F5F5DC/000000?text=Garlic",
+    image:
+      "https://images.unsplash.com/photo-1636210589096-a53d5dacd702?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEdhcmxpY3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 18,
     name: "Bell Pepper",
     price: 1.6,
     description: "Red bell peppers",
-    image: "https://via.placeholder.com/150/FF4500/FFFFFF?text=Pepper",
+    image:
+      "https://images.unsplash.com/photo-1669863347362-1630fe821708?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlbGwlMjBwZXBwZXJ8ZW58MHx8MHx8fDA%3D",
   },
   {
     id: 19,
     name: "Spinach",
     price: 2.0,
     description: "Fresh spinach",
-    image: "https://via.placeholder.com/150/006400/FFFFFF?text=Spinach",
+    image:
+      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3BpbmFjaHxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 20,
     name: "Mushroom",
     price: 2.8,
     description: "Button mushrooms",
-    image: "https://via.placeholder.com/150/8B4513/FFFFFF?text=Mushroom",
+    image:
+      "https://plus.unsplash.com/premium_photo-1674575511611-658923003072?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3w0fHx8ZW58MHx8fHx8",
   },
   {
     id: 21,

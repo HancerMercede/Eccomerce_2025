@@ -17,7 +17,7 @@ const ProductsList: React.FC<ProductsListProps> = ({
 
   const productsPerPage = 12;
   const totalPages = Math.ceil(products.length / productsPerPage);
-  console.log(products.length);
+
   const indexOfLast = currentPage * productsPerPage;
   const indexOfFirst = indexOfLast - productsPerPage;
   const currentProducts = products.slice(indexOfFirst, indexOfLast);
