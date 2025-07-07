@@ -2,21 +2,27 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.css";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import type { CartItem } from "../../Interfaces/CartItem";
+import CartDetails from "../Cart/CartDetails";
+import BubbleAlert from "../Cart/BubbleAlert";
 
 type ContadorProps = {
-  contador: number;
+  cart: CartItem[];
 };
 
-const Navbar: React.FC<ContadorProps> = ({ contador }) => {
+const Navbar: React.FC<ContadorProps> = ({ cart }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const [esCarroVisible, setEsCarroVisible] = useState(false);
+
+  const toggleCart = () => {
+    setEsCarroVisible((prev) => !prev);
+  };
+
+  const quantity = cart.reduce((acc, el) => acc + el.quantity, 0);
   const sidebarRef = useRef<HTMLUListElement>(null);
 
   const toggleMenuHandler = () => setToggleMenu((prev) => !prev);
-
-  const getNumber = (n: number) => {
-    if (!n) return "";
-    return n > 9 ? "9+" : n;
-  };
 
   useEffect(() => {
     const handleClickOutSide = (e: MouseEvent) => {
@@ -60,16 +66,14 @@ const Navbar: React.FC<ContadorProps> = ({ contador }) => {
         </ul>
 
         <div className={styles.actions}>
-          <button className={styles.cartButton}>
+          <button className={styles.cartButton} onClick={toggleCart}>
             <CiShoppingCart size={24} className={styles.cartIcon} />
+
             <span className={styles.bubble}>
-              {contador !== 0 ? (
-                <span className={styles.bubbleAlert}>
-                  {getNumber(contador)}
-                </span>
-              ) : null}
+              {quantity > 0 && <BubbleAlert value={quantity} />}
             </span>
           </button>
+          {esCarroVisible && <CartDetails cart={cart} />}
         </div>
       </div>
     </nav>

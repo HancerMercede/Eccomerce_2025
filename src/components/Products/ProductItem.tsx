@@ -5,11 +5,13 @@ import styles from "./ProductsList.module.css";
 interface ProductCardProps {
   product: Product;
   handleClick: () => void;
+  handleAddToCartItem: (product: Product) => void;
 }
 
 export const ProductItem: React.FC<ProductCardProps> = ({
   product: ProductProp,
   handleClick,
+  handleAddToCartItem,
 }) => {
   const handleImageError = (
     e: React.SyntheticEvent<HTMLImageElement, Event>
@@ -23,8 +25,10 @@ export const ProductItem: React.FC<ProductCardProps> = ({
     `)}`;
   };
 
-  const AddProductToCard = () => {
+  const AddProductToCard = (product: Product) => {
+    console.log(product);
     handleClick();
+    handleAddToCartItem(product);
   };
 
   return (
@@ -41,7 +45,10 @@ export const ProductItem: React.FC<ProductCardProps> = ({
         <p className={styles.price}>${ProductProp.price.toFixed(2)}</p>
         <p className={styles.description}>{ProductProp.description}</p>
         <div className={styles.addCardButtonContainer}>
-          <button className={styles.addCartButton} onClick={AddProductToCard}>
+          <button
+            className={styles.addCartButton}
+            onClick={() => AddProductToCard(ProductProp)}
+          >
             <CiShoppingCart className={styles.icon} size={20} />
             Add to Cart
           </button>

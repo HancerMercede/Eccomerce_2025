@@ -1,17 +1,19 @@
-import styles from "./ProductsList.module.css";
-import { ProductItem } from "./ProductItem";
 import type { Product } from "../../Interfaces/Product";
-import Pagination from "../Pagination/Pagination";
 import { useState } from "react";
+import Pagination from "../Pagination/Pagination";
+import { ProductItem } from "./ProductItem";
+import styles from "./ProductsList.module.css";
 
 interface ProductsListProps {
   products: Product[];
   handleClick: () => void;
+  handleAddCartItem: (product: Product) => void;
 }
 
 const ProductsList: React.FC<ProductsListProps> = ({
   products,
   handleClick,
+  handleAddCartItem,
 }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -36,6 +38,7 @@ const ProductsList: React.FC<ProductsListProps> = ({
           <ProductItem
             key={product.id}
             product={product}
+            handleAddToCartItem={handleAddCartItem}
             handleClick={handleClick}
           />
         ))}
