@@ -7,9 +7,15 @@ interface CartProps {
   carro: CartItem[];
   esCarroVisible: boolean;
   mostrarCarro: () => void;
+  handleRemoveFromCart: (id: number) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ carro, esCarroVisible, mostrarCarro }) => {
+const Cart: React.FC<CartProps> = ({
+  carro,
+  esCarroVisible,
+  mostrarCarro,
+  handleRemoveFromCart,
+}) => {
   const cantidad = carro.reduce((acc, el) => acc + el.quantity, 0);
 
   return (
@@ -18,7 +24,9 @@ const Cart: React.FC<CartProps> = ({ carro, esCarroVisible, mostrarCarro }) => {
       <button onClick={mostrarCarro}>
         <i className="fa-solid fa-cart-shopping" /> Shop
       </button>
-      {esCarroVisible && <CartDetails cart={carro} />}
+      {esCarroVisible && (
+        <CartDetails cart={carro} handleRemoveFromCart={handleRemoveFromCart} />
+      )}
     </div>
   );
 };

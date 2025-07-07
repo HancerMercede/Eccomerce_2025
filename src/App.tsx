@@ -34,6 +34,18 @@ function App() {
       }
     });
   };
+  const handleRemoveFromCart = (productId: number) => {
+    console.log("removing", productId);
+    setCarro((prevCart) =>
+      prevCart
+        .map((item: CartItem) =>
+          item.id === productId
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item: CartItem) => item.quantity > 0)
+    );
+  };
 
   const handleSearchProduct = useCallback((query: string) => {
     console.log(query);
@@ -48,7 +60,7 @@ function App() {
   }, []);
   return (
     <>
-      <Navbar cart={carro} />
+      <Navbar cart={carro} handleRemoveFromCart={handleRemoveFromCart} />
 
       <SearchBar
         onSearch={handleSearchProduct}

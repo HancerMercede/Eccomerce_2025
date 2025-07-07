@@ -6,11 +6,12 @@ import type { CartItem } from "../../Interfaces/CartItem";
 import CartDetails from "../Cart/CartDetails";
 import BubbleAlert from "../Cart/BubbleAlert";
 
-type ContadorProps = {
+type CartProps = {
   cart: CartItem[];
+  handleRemoveFromCart: (id: number) => void;
 };
 
-const Navbar: React.FC<ContadorProps> = ({ cart }) => {
+const Navbar: React.FC<CartProps> = ({ cart, handleRemoveFromCart }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const [esCarroVisible, setEsCarroVisible] = useState(false);
@@ -73,7 +74,12 @@ const Navbar: React.FC<ContadorProps> = ({ cart }) => {
               {quantity > 0 && <BubbleAlert value={quantity} />}
             </span>
           </button>
-          {esCarroVisible && <CartDetails cart={cart} />}
+          {esCarroVisible && (
+            <CartDetails
+              handleRemoveFromCart={handleRemoveFromCart}
+              cart={cart}
+            />
+          )}
         </div>
       </div>
     </nav>
