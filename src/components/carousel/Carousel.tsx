@@ -1,7 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import ofertas from "../../assets/images/SuperOfertas.png";
 import styles from "./Carousel.module.css";
 
