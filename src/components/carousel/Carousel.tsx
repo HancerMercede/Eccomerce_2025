@@ -33,7 +33,7 @@ const MiniMarketCarousel: React.FC = () => {
       <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={2}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
