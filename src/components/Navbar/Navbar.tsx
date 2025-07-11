@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import type { CartItem } from "../../Interfaces/CartItem";
 import CartDetails from "../Cart/CartDetails";
 import BubbleAlert from "../Cart/BubbleAlert";
+import Logo from "../../assets/images/NewLogo.png";
 
 type CartProps = {
   cart: CartItem[];
@@ -45,7 +46,7 @@ const Navbar: React.FC<CartProps> = ({ cart, handleRemoveFromCart }) => {
         </button>
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink}>
-            <h1>CompraYa</h1>
+            <img src={Logo} alt="Logo" className={styles.logoImage} />
           </Link>
         </div>
         <ul
@@ -54,6 +55,9 @@ const Navbar: React.FC<CartProps> = ({ cart, handleRemoveFromCart }) => {
         >
           <li>
             <a href="#products">Productos</a>
+          </li>
+          <li>
+            <a href="#products">Ofertas</a>
           </li>
           <li>
             <a href="#about">Sobre Nosotros</a>

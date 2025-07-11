@@ -6,6 +6,7 @@ import { products } from "./data/products";
 import Footer from "./components/Footer/Footer";
 import type { Product } from "./Interfaces/Product";
 import type { CartItem } from "./Interfaces/CartItem";
+import Carousel from "./components/carousel/Carousel";
 
 function App() {
   const [carro, setCarro] = useState<CartItem[]>([]);
@@ -61,11 +62,12 @@ function App() {
   return (
     <>
       <Navbar cart={carro} handleRemoveFromCart={handleRemoveFromCart} />
-
       <SearchBar
         onSearch={handleSearchProduct}
         placeholder="Search products..."
       />
+      <Carousel />
+
       <ProductsList
         products={filteredProducts}
         handleClick={handleClick}

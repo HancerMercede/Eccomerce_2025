@@ -1,0 +1,14 @@
+.carouselWrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carouselImage {
+    width: inherit;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}

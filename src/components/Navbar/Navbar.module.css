@@ -15,7 +15,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-
 }
 
 .logo h1 {
@@ -41,7 +40,13 @@
   gap: 2rem;
   margin: 0;
   padding: 0;
+}
 
+.logoImage {
+  height: 35px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .navLinks li a {
@@ -54,7 +59,6 @@
 .navLinks li a:hover {
   color: #007bff;
 }
-
 
 .actions {
   display: flex;
@@ -99,7 +103,7 @@
 
 @media (max-width: 768px) {
   .navbar {
-    background: #fff;
+    background: linear-gradient(#007bff, #0062cc);
     padding-bottom: 0;
     box-shadow: none;
 
@@ -126,12 +130,12 @@
 
   .toggleButton {
     display: flex;
-    color: #0062cc;
+    color: #fff;
   }
 
   .cartIcon {
     display: flex;
-    color: #0062cc;
+    color: #fff;
   }
 
   .navLinks {
@@ -148,7 +152,6 @@
     transition: transform 0.3s ease;
     z-index: 999;
     padding: 1rem;
-
   }
 
 
