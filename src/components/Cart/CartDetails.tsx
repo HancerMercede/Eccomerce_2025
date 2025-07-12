@@ -46,7 +46,7 @@ const CartDetails: React.FC<CartDetailsProps> = ({
           </div>
         </>
       ) : (
-        <p> 🫤Cart is empty</p>
+        <p> 🫤Empty...</p>
       )}
     </div>
   );

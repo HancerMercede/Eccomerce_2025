@@ -1,8 +1,8 @@
 .cartDetails {
     position: absolute;
-    top: 48px;
+    top: 70px;
     right: 0;
-    width: 11rem;
+    width: 15rem;
     background-color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
